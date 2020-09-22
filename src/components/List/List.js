@@ -3,17 +3,41 @@ import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
 import Column from '../Column/Column.js';
+import {settings} from '../../data/dataStore';
+import ReactHtmlParser from 'react-html-parser';
+import Creator from '../Creator/Creator.js';
 
 
 class List extends React.Component {
+  state = {
+    columns: this.props.columns || [],
+  }
+  
   static propTypes = {
     title: PropTypes.node.isRequired,
     image: PropTypes.node,
-    children: PropTypes.node.isRequired,
+    description: PropTypes.node,
+    columns: PropTypes.array,
   }
   
   static defaultProps = {
-    children: <p>I can do all the things...</p>,
+    description: settings.defaultListDescription,
+  }
+  
+  addColumn(title){
+    this.setState(state => (
+      {
+        columns: [
+          ...state.columns,
+          {
+            key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+            title,
+            icon: 'list-alt',
+            cards: []
+          }
+        ]
+      }
+    ));
   }
   
   render() {
@@ -21,26 +45,19 @@ class List extends React.Component {
       <section className={styles.component}>
         <Hero titleText={this.props.title} imageSourceText={this.props.image} />
         <div className={styles.description}>
-          {this.props.children}
+          {ReactHtmlParser(this.props.description)}
         </div>
         <div className={styles.columns}>
-          <Column title={['- ', <span key='1'>one</span>, ' -']}>
-          </Column>
-          <Column title={['- ', <span key='2'>two</span>, ' -']}>
-          </Column>
-          <Column title={['- ', <span key='3'>three</span>, ' -']}>
-          </Column>
+          {this.state.columns.map(({key, ...columnProps}) => (
+            <Column key={key} {...columnProps} />
+          ))}
+        </div>
+        <div className={styles.creator}>
+          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)} />
         </div>
       </section>
-      
     );
   }
 }
 
 export default List;
-/*
-if there was not in App.js between <List></List>
-<p>I'm planning on doing all these things in the future</p>
-there appears default :
-<p>I can do all the things...</p>
-*/
