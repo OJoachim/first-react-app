@@ -9,6 +9,7 @@ class Card extends React.Component {
   }
   
   render () {
+    const {title} = this.props;
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>
@@ -21,4 +22,3 @@ class Card extends React.Component {
 }
 
 export default Card;
-//{this.props.title}
