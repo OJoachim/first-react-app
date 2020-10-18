@@ -24,16 +24,17 @@ class Column extends React.Component {
       <section className={styles.component}>
         <h3 className={styles.title}>
           <span className={styles.icon}>
-            <Icon name={this.props.icon} />
+            <Icon name={icon} />
           </span>
-          {this.props.title}
+          {title}
         </h3>
-        {/*
+        
         <div className={styles.cards}>
-          {columns.map(columnData => (
-            <Column key={columnData.id} {...columnData} />
+          {cards.map(cardData => (
+            <Card key={cardData.id} {...cardData} />
           ))}
         </div>
+        {/*
         <div className={styles.creator}>
           <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
         </div>
