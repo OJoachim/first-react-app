@@ -14,7 +14,6 @@ class Card extends React.Component {
       <section className={styles.component}>
         <h3 className={styles.title}>
           {ReactHtmlParser(this.props.title)}
-          
         </h3>
       </section>
     );
