@@ -13,7 +13,7 @@ class Card extends React.Component {
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>
-          {ReactHtmlParser(this.props.title)}
+          {ReactHtmlParser(title)}
         </h3>
       </section>
     );
