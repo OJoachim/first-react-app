@@ -1,7 +1,7 @@
 export const settings = {
   columnCreatorText: 'Add new column',
   cardCreatorText: 'Add new card',
-  icon: 'sunrise',
+  icon: 'sun',
   creator: {
     buttonOK: 'OK',
     buttonCancel: 'Cancel',
@@ -91,6 +91,18 @@ const lists = [
     title: 'Things to do <sup>soon!</sup>',
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+  {
+    id: 'list-2',
+    title: 'Places to go <sup>soon!</sup>',
+    description: 'Amazing places I want to visit!',
+    image: 'https://images.pexels.com/photos/3405489/pexels-photo-3405489.jpeg',
+  },
+  {
+    id: 'list-3',
+    title: 'People to visit <sup>soon!</sup>',
+    description: 'All the people important to me...',
+    image: 'https://images.pexels.com/photos/697243/pexels-photo-697243.jpeg',
   },
 ];
 
