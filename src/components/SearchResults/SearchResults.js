@@ -1,46 +1,23 @@
 import React from 'react';
-import styles from './Column.scss';
 import PropTypes from 'prop-types';
-import Card from '../Card/Card.js';
-import {settings} from '../../data/dataStore';
-//import Creator from '../Creator/Creator.js';
-import Icon from '../Icon/Icon.js';
-import Container from '../Container/Container';
-//style: teraz nie ma SearchResults.scss;
+import Container from '../Container/Container.js';
+import Column from '../Column/Column.js';
 
 class SearchResults extends React.Component {
   
   static propTypes = {
-    title: PropTypes.node.isRequired,
     cards: PropTypes.array,
-    icon: PropTypes.node,
-  }
-  
-  static defaultProps = {
-    icon: settings.defaultColumnIcon,
   }
   
   render () {
-    const {title, icon, cards} = this.props;
+    const {cards} = this.props;
     return (
-      <section className={styles.component}>
+      <section>
         <Container>
-          <h3 className={styles.title}>
-            <span className={styles.icon}>
-              <Icon name={icon} />
-            </span>
-            {title}
-          </h3>
-          <div className={styles.cards}>
-            {cards.map(cardData => (
-              <Card key={cardData.id} {...cardData} />
-            ))}
-          </div>
-          {/*
-          <div className={styles.creator}>
-            <Creator text={settings.cardCreatorText} action={addCard} />
-          </div>
-          */}
+          <Column
+            title='Search results'
+            icon='sun'
+            cards={cards} />
         </Container>
       </section>
     );

@@ -128,11 +128,17 @@ const columns = [
   {
     id: 'column-4',
     listId: 'list-2',
-    title: 'Strange column',
+    title: 'Voyage',
     icon: 'ship',
   },
   {
     id: 'column-5',
+    listId: 'list-2',
+    title: 'trip',
+    icon: 'campground',
+  },
+  {
+    id: 'column-6',
     listId: 'list-3',
     title: 'abc...',
     icon: 'home',
@@ -169,6 +175,11 @@ const cards = [
     id: 'card-6',
     columnId: 'column-3',
     title: 'Skyrim',
+  },
+  {
+    id: 'card-7',
+    columnId: 'column-5',
+    title: 'by bike...',
   },
 ];
 

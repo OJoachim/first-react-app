@@ -34,11 +34,9 @@ class Column extends React.Component {
             <Card key={cardData.id} {...cardData} />
           ))}
         </div>
-        {/* */}
         <div className={styles.creator}>
-          <Creator text={settings.cardCreatorText} action={addCard} />
+         { addCard && <Creator text={settings.cardCreatorText} action={addCard} /> }
         </div>
-        
       </section>
     );
   }
