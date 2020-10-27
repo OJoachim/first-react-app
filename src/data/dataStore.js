@@ -129,7 +129,13 @@ const columns = [
     id: 'column-4',
     listId: 'list-2',
     title: 'Strange column',
-    icon: 'question',
+    icon: 'ship',
+  },
+  {
+    id: 'column-5',
+    listId: 'list-3',
+    title: 'abc...',
+    icon: 'home',
   },
 ];
 
